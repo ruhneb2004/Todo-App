@@ -11,12 +11,14 @@ function App() {
       setTodos(json.todos);
       console.log(json.todos);
     });
-  }, [todos]);
+  }, []);
   return (
-    <div>
-      <CreateTodo setTodos={setTodos}></CreateTodo>
-      <Todos todos={todos} />
-    </div>
+
+      <div className="cover">
+      <CreateTodo setTodos={setTodos} todos={todos}></CreateTodo>
+      <Todos todos={todos} setTodos={setTodos}/>
+</div>
+    
   );
 }
 

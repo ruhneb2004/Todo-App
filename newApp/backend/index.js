@@ -22,9 +22,7 @@ app.post("/todo", async (req, res) => {
     completed: false,
   });
 
-  res.status(200).json({
-    msg: "Todo created",
-  });
+  res.status(200).json(req.body);
 });
 
 app.get("/todos", async (req, res) => {
@@ -69,6 +67,7 @@ app.delete("/delete", async (req, res) => {
   await todo.findByIdAndDelete({
     _id: req.body.id,
   });
+  res.send();
 });
 
 app.listen(port);
