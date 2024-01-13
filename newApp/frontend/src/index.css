@@ -88,7 +88,7 @@ background-color: antiquewhite;
   flex-direction: column;
   row-gap: 10px;
   border-radius: 11px;
-  width: 100%;
+  width: 70%;
   word-wrap: break-word;
   overflow-wrap: anywhere;
   background-color: #ffca89;
@@ -138,6 +138,7 @@ background-color: antiquewhite;
 .description{
   color: black;
   text-align: center;
+  font-size: 16px;
   width: 93%;
 }
 .outputText{
@@ -147,4 +148,29 @@ background-color: antiquewhite;
 }
 .author{
   font-size: 1px;
+}
+.editTit{
+  color: white;
+  font-weight: bold;
+  font-size: 3vh;
+}
+.editDes{
+  font-size: 16px;
+}
+.editTit,.editDes{
+  background-color: #ffca89;
+  border: none;
+  outline: none; 
+  width: 100%;
+  transition: background-color 0.3s;
+  text-align: center;
+  box-sizing: border-box;
+  resize: none;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  /* height:; */
+}
+.singleTodo:hover .editDes,
+  .singleTodo:hover .editTit {
+  background-color: #ffb458;
 }
