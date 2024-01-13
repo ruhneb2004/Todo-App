@@ -56,6 +56,22 @@ app.put("/completed", async (req, res) => {
     msg: "Todo marked as completed",
   });
 });
+//New Code
+app.put("/update", async (req, res) => {
+  console.log(req.body);
+  const updatePayload = req.body;
+  const parsedPayload = createTodo.safeParse(updatePayload);
+  if (!parsedPayload.success) {
+    return res.status(411).json({ msg: "wrong inputs" });
+  }
+  const updtTodo = await todo.findOneAndUpdate(
+    { _id: req.body.id },
+    { title: req.body.title, description: req.body.description },
+    { new: true }
+  );
+  res.status(200).json({ msg: "update successful!!!" });
+});
+//New Code
 
 app.delete("/delete", async (req, res) => {
   const deletePayload = req.body;
